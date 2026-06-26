@@ -1,6 +1,6 @@
 # 👥 Agent-Skins
 
-### 17,280+ Production-Ready AI Agent Prompts, Tool Schemas & Framework Configs
+### 18,720+ Production-Ready AI Agent Prompts, Tool Schemas & Framework Configs
 
 Stop spending weeks debugging prompts. Pick a role, pick your industry, pick your framework — and ship.
 
@@ -8,12 +8,15 @@ Stop spending weeks debugging prompts. Pick a role, pick your industry, pick you
 
 ## What is this?
 
-Every file in this repository is a complete, ready-to-use AI agent configuration. Each one contains:
+Every file in this repository is a complete, ready-to-use AI agent configuration. Each folder contains:
 
-- ✅ A **professional system prompt** with clear identity, goals, and execution steps
-- ✅ **Industry-specific compliance guardrails** (HIPAA, GDPR, PCI-DSS, FERPA, SOC2, and more)
-- ✅ **Domain vocabulary** so your agent speaks the language of the industry
-- ✅ **Framework boilerplate** you can copy-paste directly into your project
+- ✅ **Framework configurations**: Copy-pasteable boilerplate for CrewAI, LangGraph, AutoGen, or Vercel AI SDK.
+- ✅ **Universal raw prompts (`raw_prompt.md`)**: A framework-agnostic system prompt with **2,100+ lines of production-grade depth** for ChatGPT, Claude, Gemini, Ollama, or any API.
+- ✅ **Multi-Point Audit Matrix (`AUD-01` to `AUD-05`)**: Adherence checklists for compliance (HIPAA, GDPR, PCI-DSS, etc.).
+- ✅ **Zero-Trust Logic**: Strict separation of facts (`[FACT]`) and inferences (`[INFERENCE]`) to prevent hallucinations.
+- ✅ **Interactive Self-Evaluation**: Built-in 1-10 scoring check with self-correction logic.
+- ✅ **15 worked few-shot scenarios**: Covering standard runs, edge cases, out-of-scope requests, and validation failures.
+- ✅ **55-case appendix**: Context-rich manual pages to help models maintain their persona during long execution sessions.
 
 No setup. No API keys. No dependencies. Just find what you need and use it.
 
@@ -26,9 +29,9 @@ No setup. No API keys. No dependencies. Just find what you need and use it.
 | **Departments** | 12 | Sales, Finance, HR, Marketing, Engineering, Customer Support, Operations, Product, Legal, Security, IT Admin, Design |
 | **Roles per Dept** | 10 | 120 unique professional agent profiles |
 | **Industry Verticals** | 12 | SaaS, FinTech, E-commerce, HealthTech, Real Estate, EdTech, Logistics, PropTech, AgTech, BioTech, CyberSecurity, InsurTech |
-| **Frameworks** | 4 | CrewAI, LangGraph, AutoGen, Vercel AI SDK |
-| **Model Optimizations** | 3 | Anthropic (Claude), OpenAI (GPT), Meta (Llama) |
-| **Total Configurations** | **17,280** | Every combination of the above |
+| **Framework-Agnostic Prompts** | **1,440** | `raw_prompt.md` files (2,100+ lines each) for any LLM or client |
+| **Framework & Model Configs** | **17,280** | Optimized files for CrewAI, LangGraph, AutoGen, and Vercel AI SDK |
+| **Total Configurations** | **18,720** | Every combination of the above |
 
 ---
 
