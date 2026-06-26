@@ -1,54 +1,42 @@
 # Contributing to Agent-Skins
 
-We are excited to build the world's largest, high-performance database of AI Agent prompts and configurations! Here is how you can help.
-
----
-
-## 🛠️ How the Prompts are Generated
-
-All configurations inside the `skins/` directory are generated programmatically using the compiler located at `compiler/skins_compiler.py`. 
-
-**Please do not edit files in the `skins/` directory directly.** They will be overwritten the next time the compiler is executed.
+We are excited to build the world's largest database of AI Agent prompts and configurations! Here is how you can help.
 
 ---
 
 ## ⚡ Adding New Skins
 
-### 1. Adding a New Role
-To add a new role to an existing department, open `compiler/skins_compiler.py`, locate the target department inside the `DEPARTMENTS` dictionary, and append your role details:
+We accept contributions for new roles, industries, and framework setups. Since configurations are structured statically, please follow these guidelines when adding files.
 
-```python
-{
-    "role": "New Role Name",
-    "goal": "Clear actionable goal statement."
-}
+### Folder Structure
+All configurations are placed using the following path formula:
+```text
+skins/{department}/{industry}/{role_id}/
 ```
 
-### 2. Adding a New Industry Vertical
-To introduce a new industry compliance or vocabulary guideline, add an entry to the `INDUSTRIES` dictionary:
+For example, to add an AI agent for a **Lead Qualifier** in **SaaS** within the **Sales** department:
+* Directory: `skins/sales/saas/lead_qualifier/`
 
-```python
-"Your_Industry": {
-    "standard": "Compliance Standards (e.g. HIPAA, SOC2)",
-    "guardrail": "Specific safety guardrails.",
-    "terms": "Comma-separated list of domain specific terms."
-}
-```
+### 1. Adding a Universal Prompt
+Create a `raw_prompt.md` file inside the target directory following this outline:
+- **Identity & Backstory**: Professional profile, tone, and system boundaries.
+- **Core Objective**: The main goal statement of the agent.
+- **Compliance standard**: Checklists for safety limits (e.g. HIPAA, PCI-DSS, GDPR).
+- **Workflow**: Explicit step-by-step reasoning.
+- **Worked Examples**: Clear few-shot scenarios demonstrating inputs and expected outputs.
+
+### 2. Adding Framework Configurations
+If you want to provide pre-configured setups for popular frameworks, add files named:
+* `crewai_openai_optimized.py` / `crewai_anthropic_optimized.py`
+* `langgraph_openai_optimized.py` / `langgraph_anthropic_optimized.py`
+* `autogen_openai_optimized.py` / `autogen_anthropic_optimized.py`
+* `vercel_ai_sdk_openai_optimized.ts` / `vercel_ai_sdk_anthropic_optimized.ts`
 
 ---
 
-## 🧪 Compiling and Testing
+## 🧪 Submission Checklist
 
-Once you make changes to the compiler configuration:
-
-1. Recompile the database:
-   ```bash
-   python compiler/skins_compiler.py
-   ```
-
-2. Run automated validation tests:
-   ```bash
-   python compiler/test_skins.py
-   ```
-
-3. Ensure all tests pass before opening a Pull Request!
+Before submitting a Pull Request:
+1. Ensure files are correctly formatted and placed under the correct department/industry path.
+2. Confirm prompts do not contain any private credentials, API keys, or personal details.
+3. Test your configuration templates locally with the respective agent frameworks.
